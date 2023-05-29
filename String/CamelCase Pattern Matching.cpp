@@ -87,3 +87,36 @@ class Solution {
         return ans;
     }
 };
+
+// Solution without using space
+
+class Solution {
+  public:
+    vector<string> CamelCase(int N, vector<string> Dictionary, string Pattern) {
+        // code here
+        vector<string>ans;
+        int n=Pattern.length();
+        for(auto x:Dictionary)
+        {
+            int k=0;
+            for(int i=0; i<x.length(); i++)
+            {
+                if(k<n&& x[i]==Pattern[k])
+                {
+                    k++;
+                }
+                else if(isupper(x[i]))
+                {
+                    break;
+                }
+            }
+            if(k==n)
+            {
+                ans.push_back(x);
+            }
+        }
+        if(ans.size()==0)
+            return {"-1"};
+        return ans;
+    }
+};
