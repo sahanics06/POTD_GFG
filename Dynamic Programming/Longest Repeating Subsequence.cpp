@@ -78,7 +78,7 @@ Constraints:
 1 <= |str| <= 103
   */
 
-// Solution using DP. Time- O(N^2). Space- O(N).
+// Solution using DP. Time- O(N^2). Space- O(N^2).
 
 class Solution {
 	public:
