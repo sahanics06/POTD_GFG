@@ -60,6 +60,34 @@ class Solution{
 };
 
 
+// Solution using Recursion
+
+class Solution{
+	public:
+	void solve(string s, string &tmp, int idx, vector<string>&ans)
+	    {
+	        if(idx>=s.length())
+	            return;
+	       for(int i=idx; i<s.length(); i++)
+	       {
+	           tmp+=s[i];
+	           ans.push_back(tmp);
+	           solve(s, tmp, i+1, ans);
+	           tmp.pop_back();
+	       }
+	       return;
+	    }
+		vector<string> AllPossibleStrings(string s){
+		    vector<string>ans;
+		    string tmp="";
+		    solve(s, tmp, 0, ans);
+		    sort(ans.begin(), ans.end());
+		    return ans;
+		}
+};
+
+
+
 // Solution using Bitmask. T.C- O(n*2^n)
 
 class Solution{
